@@ -45,18 +45,20 @@ class _HomeScreenState extends State<HomeScreen> {
         title: Text(
           //Provider.of로 가장 가까운 상위 Provider를 찾아 task 갯수를 가져옴
           //context 현재 위젯이 속한 위젯 트리의 위치와 정보
-          'Todo Tasks (${Provider.of<TasksData>(context).tasks.length})',
+          '${Provider.of<TasksData>(context).tasks.length} Things To Do',
         ),
         centerTitle: true,
         backgroundColor: Colors.blueGrey,
       ),
       body: Container(
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+        //데이터를 구독, 해당 데이터가 변경될 때마다 자동으로 새로운 값을 빌더 함수에 전달
         child: Consumer<TasksData>(
           builder: (context, tasksData, child) {
+            //스크롤 가능한 리스트 위젯
             return ListView.builder(
-                itemCount: tasksData.tasks.length,
-                itemBuilder: (context, index) {
+                itemCount: tasksData.tasks.length,//항목 수를 지정
+                itemBuilder: (context, index) {//각 항목의 위젯을 생성
                   Task task = tasksData.tasks[index];
                   return TaskTile(
                     task: task,
@@ -77,7 +79,7 @@ class _HomeScreenState extends State<HomeScreen> {
         onPressed: () {
           showModalBottomSheet(
             context: context,
-            builder: (context) {
+            builder: (context) {//모달에 표시될 위젯을 반환
               return const AddTaskScreen();
             },
           );

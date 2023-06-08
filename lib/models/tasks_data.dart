@@ -9,7 +9,7 @@ class TasksData extends ChangeNotifier {
   void addTask(String taskTitle) async {
     Task task = await DatabaseServices.addTask(taskTitle);
     tasks.add(task);
-    notifyListeners(); //Provider -> ChangeNotifier -> 상태 변화 업데이트
+    notifyListeners(); //ChangeNotifier -> 상태 변화 업데이트
   }
 
   void updateTask(Task task) {

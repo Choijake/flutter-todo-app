@@ -9,12 +9,12 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({Key? key}) : super(key: key);//위젯을 고유하게 식별
 
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider<TasksData>(
-      create: (context) => TasksData(),
+      create: (context) => TasksData(),//TasksData 인스턴스를 생성
       child: const MaterialApp(
         debugShowCheckedModeBanner: false,
         home: HomeScreen(),

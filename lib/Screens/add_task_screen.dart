@@ -23,7 +23,7 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
             textAlign: TextAlign.center,
             style: TextStyle(
               fontSize: 30,
-              color: Colors.green,
+              color: Colors.blueGrey,
             ),
           ),
           TextField(
@@ -46,7 +46,7 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
               'Add',
               style: TextStyle(color: Colors.white),
             ),
-            style: TextButton.styleFrom(backgroundColor: Colors.green),
+            style: TextButton.styleFrom(backgroundColor: Colors.blueGrey),
           ),
         ],
       ),
